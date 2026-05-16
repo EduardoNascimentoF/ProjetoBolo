@@ -130,7 +130,7 @@ def novo_pedido():
     tamanho = request.form.get('tamanho')
     valor_cobrado = request.form.get('valor')
 
-    # Tabela de custos fixos
+    # Tabela de custos fixos(provavelmente vão se alterados)
     tabela_custos = {
         '23': 10.00,
         '30': 15.50,
@@ -151,8 +151,7 @@ def novo_pedido():
         custo_fixo
     )
 
-    # 4. Inserir no banco (adicionando a coluna 'custo')
-    # Certifique-se de que o VALUES tenha 7 interrogações (?)
+    # Inserir no banco 
     query_db('pedidos.db',
              "INSERT INTO encomendas (nome_cliente, sabor, tamanho_cm, formato, data_entrega, valor, custo) VALUES (?, ?, ?, ?, ?, ?, ?)",
              dados, commit=True)

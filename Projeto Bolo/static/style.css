@@ -1,0 +1,488 @@
+/* =========================================
+   1. VARIÁVEIS GERAIS (Cores e Fontes)
+   ========================================= */
+:root {
+    /* Cores Principais */
+    --primary-color: #8f4628;
+    --dark-color: #7d4024;
+    --hover-color: #6e351d;
+
+    /* Cores de Fundo */
+    --bg-page: #f7ede3;
+    --bg-card: #faf7fc;
+    --bg-login-left: #f4e8dc;
+    --bg-login-right: #c8e3d4;
+
+    /* Cores de Destaque / Status */
+    --peach: #f7d4c8;
+    --peach-dark: #ff9a8b;
+    --peach-hover: #ff7e6b;
+    --mint: #d2eadb;
+    --mint-hover: #a7ffd1;
+    --green-dark: #2d5a41;
+    --red-light: #ff9696;
+
+    /* Fontes */
+    --font-title: 'Poppins', sans-serif;
+    --font-ui: 'Poppins', sans-serif;
+    --font-btn: 'Poppins', sans-serif;
+}
+
+/* =========================================
+   2. RESET E TIPOGRAFIA BASE
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-title);
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+/* =========================================
+   3. COMPONENTES REUTILIZÁVEIS (Botões e Modals)
+   ========================================= */
+/* Botões Comuns */
+button, .btn-new-order, .btn-history, .btn-text-modern, .btn-action {
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-login {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 40px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8), -1px -1px 0 rgba(0, 0, 0, 0.4);
+    letter-spacing: 1px;
+}
+
+.btn-login:hover, .btn-new-order:hover, .btn-delivery:hover {
+    background-color: var(--hover-color);
+}
+
+.btn-new-order {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-family: var(--font-btn);
+    font-weight: 700;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 6px rgba(143, 70, 40, 0.3);
+}
+
+.btn-new-order:hover {
+    transform: translateY(-2px);
+}
+
+/* Botões Modernos (Ações do Dashboard) */
+.actions-row {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.btn-action {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-action:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.btn-check { background-color: var(--mint); color: var(--green-dark); }
+.btn-check:hover { background-color: var(--mint-hover); }
+
+.btn-undo { background-color: #f0f0f0; color: #555; }
+.btn-undo:hover { background-color: #e0e0e0; }
+
+.btn-text-modern {
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-text-modern:hover { background-color: var(--hover-color); }
+
+.btn-history {
+    background-color: #f0f0f0;
+    color: #555;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+}
+
+.btn-history:hover {
+    background-color: #e0e0e0;
+    color: #222;
+}
+
+/* Modals */
+.modal-container {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    width: 450px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.modal-large {
+    width: 80% !important;
+    max-width: 800px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    font-size: 25px;
+    cursor: pointer;
+    color: #999;
+}
+
+.modal-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.btn-save {
+    width: 100%;
+    padding: 12px;
+    background: var(--peach-dark);
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.btn-save:hover { background: var(--peach-hover); }
+
+/* =========================================
+   4. PÁGINA DE LOGIN / REGISTRO
+   ========================================= */
+.image-placeholder {
+    flex: 1;
+    background-image: url('img/bolo fundo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.login-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, var(--bg-login-left) 65%, var(--bg-login-right) 65%);
+    position: relative;
+}
+
+.login-card {
+    background-color: #ffffff;
+    width: 85%;
+    max-width: 450px;
+    padding: 20px 50px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.logo-circle {
+    width: 250px;
+    height: 250px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+.logo-img {
+    width: 120%;
+    height: auto;
+    object-fit: contain;
+}
+
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-group label {
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: 1rem;
+    color: #000;
+    margin-left: 10px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 20px;
+    border: 3px solid var(--dark-color);
+    border-radius: 30px;
+    font-size: 1rem;
+    outline: none;
+    background-color: transparent;
+}
+
+.input-group input:focus {
+    box-shadow: 0 0 5px rgba(125, 64, 36, 0.5);
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+/* =========================================
+   5. DASHBOARD (HOME)
+   ========================================= */
+.dashboard-body {
+    background-color: var(--bg-page);
+    padding: 30px 50px;
+    min-height: 100vh;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    font-family: var(--font-ui);
+    color: var(--primary-color);
+}
+
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-left { gap: 15px; }
+.header-right { gap: 20px; }
+
+.dash-logo, .avatar {
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.dash-logo { width: 60px; height: 60px; }
+.avatar { width: 45px; height: 45px; cursor: pointer; }
+
+.header-left h1 { font-size: 1.2rem; font-weight: 400; }
+.header-left h1 strong { font-weight: 700; }
+
+.icon-bell { font-size: 1.8rem; cursor: pointer; }
+
+.dashboard-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* Cartões do Dashboard */
+.board-card {
+    background-color: var(--bg-card);
+    border-radius: 30px;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    min-height: 500px;
+}
+
+.card-header {
+    padding: 25px 20px;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.bg-peach { background-color: var(--peach); color: var(--dark-color); }
+.bg-mint { background-color: var(--mint); color: var(--dark-color); }
+.bg-red { background-color: var(--red-light); }
+.bg-white { background-color: #ffffff; }
+.bg-green { background-color: var(--mint-hover); }
+
+.card-header h2 {
+    font-family: var(--font-ui);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.badge-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.circle-badge {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 4px solid rgba(125, 64, 36, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.badge-area span {
+    font-family: var(--font-ui);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: left;
+    line-height: 1.2;
+}
+
+.card-body { padding: 30px; }
+
+.order-item {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.order-info {
+    font-family: var(--font-ui);
+    font-size: 0.95rem;
+    color: var(--dark-color);
+    line-height: 1.5;
+}
+
+.divider {
+    border: none;
+    border-top: 3px solid #111;
+    margin: 25px 0;
+    position: relative;
+    opacity: 0.8;
+}
+
+.divider::before, .divider::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #111;
+    border-radius: 50%;
+    top: -6px;
+}
+
+.divider::before { left: 0; }
+.divider::after { right: 0; }
+
+/* Coluna Financeira */
+.finance-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.finance-card {
+    padding: 20px 25px;
+    border-radius: 25px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+    font-family: var(--font-ui);
+    color: #000;
+}
+
+.finance-card h3 { font-size: 1.1rem; margin-bottom: 5px; font-weight: 700; }
+.finance-card .value { font-size: 1.8rem; font-weight: 700; margin-bottom: 5px; }
+.finance-card .subtext { font-size: 0.9rem; color: #333; }
+
+.chart-card {
+    text-align: center;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tabela de Histórico */
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.history-table th, .history-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+}
+
+.history-table th {
+    background-color: #fafafa;
+    color: #777;
+}

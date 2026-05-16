@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sweet Flavour</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <div class="image-placeholder"></div>
+
+    <div class="login-section">
+        <div class="login-card">
+
+            <div class="logo-circle">
+                <img src="{{ url_for('static', filename='img/sweet.jpeg') }}" alt="Logo Sweet Flavour" class="logo-img">
+            </div>
+
+            <form action="{{ url_for('login') }}" method="POST" class="login-form">
+                <div class="input-group">
+                    <label for="username">Usuário</label>
+                    <input type="text" id="username" name="username">
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password">
+                </div>
+
+                <div class="btn-container">
+                    <button type="submit" class="btn-login">Entrar</button>
+                </div>
+
+                <p style="text-align: center; margin-top: 15px; font-family: 'Roboto', sans-serif;">
+                    Não tem uma conta? <a href="{{ url_for('registro') }}"
+                                          style="color: #8f4628; font-weight: bold; text-decoration: none;">Cadastre-se
+                    aqui</a>
+                </p>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

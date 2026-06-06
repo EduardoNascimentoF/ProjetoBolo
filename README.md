@@ -1,5 +1,5 @@
 # ProjetoBolo
-Um site voltado para mais administração de pedidos de uma loja de bolo:
+Um site voltado para mais administração qque fiz pensando na minha loja de bolo para organizar pedidos:
 - Mostra os pedidos pendentes que ainda precisam ser feitos
 - Mostra os pedidos ja feitos porém não entregues
 - Tem como passar os pedidos para concluido, entregue e pendende, quantas vezes quiser)

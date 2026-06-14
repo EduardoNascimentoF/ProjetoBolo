@@ -5,7 +5,7 @@ from functools import wraps
 from datetime import datetime
 
 app = Flask(__name__)
-app.secret_key = '@dsa'
+app.secret_key = 
 
 # Filtro para converter a data do banco
 @app.template_filter('data_br')
@@ -163,7 +163,3 @@ def novo_pedido():
 def logout():
     session.pop('usuario_logado', None)
     return redirect(url_for('login'))
-
-
-if __name__ == '__main__':
-    app.run(debug=True)

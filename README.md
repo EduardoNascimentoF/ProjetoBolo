@@ -1,4 +1,5 @@
 # ProjetoBolo
+- Projeto bem simples de começo de programação mas pretendo me aprofundar mais e mais nisso
 Um site voltado para mais administração qque fiz pensando na minha loja de bolo para organizar pedidos:
 - Um dos primeiros projetos, tive auxilios no front end com IA (majoritariamente Gemini) supriu bem as necessidades,ja que meu principal objetivo era aprender mais sobre o back end e mexer com banco de dados local e pretendo aprender mais sobre bancos na nuvem
 - Mostra os pedidos pendentes que ainda precisam ser feitos
